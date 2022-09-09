@@ -1,57 +1,75 @@
 public class Main {
     public static void main(String[] args) {
         //Задание 1
-        int i;
-        System.out.println("Задние - 1");
-        for (i = 1; i <= 10; i++) {
-            System.out.println(i);
+        int j = 29000;
+        int k = 0;
+        int v = 0;
+        System.out.println("Задание - 1");
+        while (k <= 2_459_000) {
+            k=k+k/100;
+            k=j+k;
+            v++;
+            System.out.println("Месяц "+v+", сумма накоплений равна "+k+" рублей");
         }
         //Задание 2
-        int a;
-        System.out.println("Задние - 2");
-        for (a = 10; a >= 1; a--) {
+        int a = 0;
+        System.out.println("Задание - 2");
+        while (a < 10) {
+            a++;
+            System.out.println(a);
+        }
+        for (;a>0;a--){
             System.out.println(a);
         }
         //Задание 3
-        int b;
-        System.out.println("Задние - 3");
-        for (b = 2; b <= 17; b = b + 2) {
-            System.out.println(b);
+        int y = 12_000_000;
+        System.out.println("Задание - 3");
+        for (int year=1; year<=10; year++){
+            y=y+(y/1000*9);
+            System.out.println("Год "+year+", численность населения составляет "+y);
         }
-        //Задание 4
-        int с;
-        System.out.println("Задние - 4");
-        for (с = 10; с >= -10; с--) {
-            System.out.println(с);
-        }
-        //Задание 5
-        int f;
-        System.out.println("Задние - 5");
-        for (f = 1904; f <= 2096; f=f+4) {
-            System.out.println(f);
-        }
-        //Задание 6
-        int v;
-        System.out.println("Задние - 6");
-        for (v = 1; v <= 512; v=v*2) {
-            System.out.println(v);
+        //Задание 4-6
+        int vklad = 15000;
+        int nakoplen = 0;
+        int mes = 0;
+        System.out.println("Задание - 4-6");
+        while (mes <= 108) {
+            nakoplen=nakoplen+nakoplen/100*7;
+            nakoplen=vklad+nakoplen;
+            mes++;
+            if (mes % 6 == 0) {
+                System.out.println("Месяц " + mes + ", сумма накоплений равна " + nakoplen + " рублей");
+            }
         }
         //Задание 7
-        int m = 29000;
-        int y = 0;
-        System.out.println("Задние - 7");
-        for (int z = 1; z <= 12; z++) {
-            y=m+y;
-            System.out.println("Месяц "+z+", сумма накоплений равна "+y+" рублей");
+        System.out.println("Задание - 7");
+        int friday = 7;
+        for (int days=0; days<=31; days++) {
+            if (friday == days) {
+                friday=friday+7;
+                System.out.println("Сегодня пятница, "+days+"-е число. Необходимо подготовить отчет.");
+            }
         }
         //Задание 8
-        int j = 29000;
-        int k = 0;
-        System.out.println("Задние - 8");
-        for (int z = 1; z <= 12; z++) {
-            k=k+k/100;
-            k=j+k;
-            System.out.println("Месяц "+z+", сумма накоплений равна "+k+" рублей");
+        System.out.println("Задание - 8");
+        int future = 2122;
+        int past = 1822;
+        while (past<future) {
+            past = past+79;
+            if (past>future){
+                break;
+            }
+            else {
+                System.out.println(past);
+            }
+        }
+        //Задание 9
+        System.out.println("Задание - 9");
+        int two = 2;
+        int m;
+        for (int g=1;g<=10;g++){
+            m=two*g;
+            System.out.println(two+"*"+g+"="+m);
         }
     }
 }
