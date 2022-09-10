@@ -1,15 +1,15 @@
 public class Main {
     public static void main(String[] args) {
         //Задание 1
-        int j = 29000;
-        int k = 0;
-        int v = 0;
+        int contribution = 29000;
+        int accumulation = 0;
+        int month = 0;
         System.out.println("Задание - 1");
-        while (k <= 2_459_000) {
-            k=k+k/100;
-            k=j+k;
-            v++;
-            System.out.println("Месяц "+v+", сумма накоплений равна "+k+" рублей");
+        while (accumulation <= 2_459_000) {
+            accumulation *= 1.01; // 1% от суммы накомпления, ежемесячно добавляем к сумме накопления
+            accumulation=contribution+accumulation; // накопления + ежемесячный взнос
+            month++;
+            System.out.println("Месяц "+month+", сумма накоплений равна "+accumulation+" рублей");
         }
         //Задание 2
         int a = 0;
@@ -22,40 +22,42 @@ public class Main {
             System.out.println(a);
         }
         //Задание 3
-        int y = 12_000_000;
         System.out.println("Задание - 3");
+        int population = 12_000_000;
+        int fertility = 17;
+        int mortality = 8;
         for (int year=1; year<=10; year++){
-            y=y+(y/1000*9);
-            System.out.println("Год "+year+", численность населения составляет "+y);
+            population=population+(population/1000*(fertility-mortality));
+            System.out.println("Год "+year+", численность населения составляет "+population);
         }
         //Задание 4-6
-        int vklad = 15000;
-        int nakoplen = 0;
-        int mes = 0;
+        int contribution2 = 15000;
+        int accumulation2 = 0;
+        int month2 = 0;
         System.out.println("Задание - 4-6");
-        while (mes <= 108) {
-            nakoplen=nakoplen+nakoplen/100*7;
-            nakoplen=vklad+nakoplen;
-            mes++;
-            if (mes % 6 == 0) {
-                System.out.println("Месяц " + mes + ", сумма накоплений равна " + nakoplen + " рублей");
+        while (month2 <= 108) {
+            accumulation2*=1.07; //7% от суммы накомпления, ежемесячно добавляем к сумме накопления
+            accumulation2=contribution2+accumulation2; // накопления + ежемесячный взнос
+            month2++;
+            if (month2 % 6 == 0) {
+                System.out.println("Месяц " + month2 + ", сумма накоплений равна " + accumulation2 + " рублей");
             }
         }
         //Задание 7
         System.out.println("Задание - 7");
-        int friday = 7;
+        int friday = 7; // номер первой пятницы месяца
         for (int days=0; days<=31; days++) {
-            if (friday == days) {
+            if (friday == days) { // если день совпадает с датой пятнинцы, добавляем 7 дней к значению следущей пятницы.
                 friday=friday+7;
                 System.out.println("Сегодня пятница, "+days+"-е число. Необходимо подготовить отчет.");
             }
         }
         //Задание 8
         System.out.println("Задание - 8");
-        int future = 2122;
-        int past = 1822;
+        int future = 2122; // +100 лет от текущего года
+        int past = 1822; // -200 лет от текущего года
         while (past<future) {
-            past = past+79;
+            past = past+79; // комета пролетает рядом с Землей каждый 79-й год
             if (past>future){
                 break;
             }
@@ -65,8 +67,8 @@ public class Main {
         }
         //Задание 9
         System.out.println("Задание - 9");
-        int two = 2;
-        int m;
+        int two = 2; // постоянное значение переменной в умножении
+        int m; // результат умножения
         for (int g=1;g<=10;g++){
             m=two*g;
             System.out.println(two+"*"+g+"="+m);
